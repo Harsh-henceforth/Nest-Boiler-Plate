@@ -1,8 +1,14 @@
 'use client';
+
+// libs
 import { ReactNode, useEffect } from "react";
 import { useRouter } from "next/router";
+
+// components
 import AuthLayout from "./AuthLayout";
 import Layout from "./Layout";
+
+// utils and constants
 import pkg from '../../package.json';
 import { parseCookies, setCookie, destroyCookie } from 'nookies'
 
