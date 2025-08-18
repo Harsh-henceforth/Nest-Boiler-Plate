@@ -9,7 +9,10 @@ export const config = {
   },
 };
 
-export default function handler(req: NextApiRequest, res: NextApiResponseServerIO) {
+export default function handler(
+  req: NextApiRequest,
+  res: NextApiResponseServerIO
+) {
   if (!res.socket.server.io) {
     const httpServer: HTTPServer = res.socket.server as any;
     const io = new IOServer(httpServer, {

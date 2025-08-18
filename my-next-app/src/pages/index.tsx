@@ -1,6 +1,8 @@
 // libs
 import { useEffect } from "react";
 import { useRouter } from "next/router";
+
+// constants
 import { ROUTES } from "@/utils/constants/routes.constant";
 
 export default function Index() {

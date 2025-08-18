@@ -31,11 +31,12 @@ const STATIC_TOKEN = true;
 
 const authRoutePatterns = [/^\/home(\/.*)?$/, /^\/dashboard(\/.*)?$/];
 
-const publicRoutes = ["/login"];
+const publicRoutes = ["/login","/"];
 
 export default function LayoutSelector({ children }: Props) {
   const router = useRouter();
   const pathname = router.pathname;
+  console.log({ pathname })
 
   useEffect(() => {
     if (!STATIC_TOKEN) {

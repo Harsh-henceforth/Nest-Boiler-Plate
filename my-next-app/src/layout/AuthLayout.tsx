@@ -1,7 +1,8 @@
-import Header from "@/components/Header";
-import { SidebarProvider } from "@/components/ui/sidebar";
-import { AppSidebar } from "@/components/Sidebar";
-import { ReactNode } from "react";
+// libs
+import { ReactNode, Suspense } from "react";
+
+// components
+import Navbar from "@/components/customComponent/navbar";
 
 type Props = {
   children: ReactNode;
@@ -10,15 +11,10 @@ type Props = {
 export default function AuthLayout({ children }: Props) {
   return (
     <div className="flex flex-col h-screen">
-      <Header />
-      <SidebarProvider>
-        <div className="flex flex-1 overflow-hidden">
-          <aside className="w-64 bg-gray-800 text-white shadow-md p-4">
-            <AppSidebar />
-          </aside>
-          <main className="flex-1 py-8 overflow-y-auto">{children}</main>
-        </div>
-      </SidebarProvider>
+      <Navbar />
+      <div className="flex flex-1 overflow-hidden">
+        <main className="flex-1 py-8 overflow-y-auto">{children}</main>
+      </div>
     </div>
   );
 }

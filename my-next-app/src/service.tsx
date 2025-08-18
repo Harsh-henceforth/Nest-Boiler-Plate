@@ -1,4 +1,5 @@
 import axios from "axios";
+import { ROUTES } from "./utils/constants/routes.constant";
 
 // dev server
  const API_ROOT = process.env.NEXT_PUBLIC_DEV_API_URL;
@@ -52,7 +53,7 @@ service.interceptors.response.use(
     const { status } = error.response || {};
     if (status === 401) {
       sessionStorage.clear();
-      window.location.replace("/login");
+      window.location.replace(ROUTES.LOGIN);
     }
 
     return Promise.reject(error);

@@ -12,13 +12,16 @@ import type { AppProps } from "next/app";
 
 // redux
 import { store } from "@/store/store";
+import { Suspense } from "react";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
+   <Suspense fallback={<h1>eree</h1>}>
     <Provider store={store}>
       <LayoutSelector>
         <Component {...pageProps} />
       </LayoutSelector>
     </Provider>
+    </Suspense>
   );
 }
